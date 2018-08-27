@@ -176,6 +176,7 @@ def team_names
   jj
 end
 
+<<<<<<< HEAD
 def player_numbers(teamzzz)
   output = []
   game_hash.each do |place, data|
@@ -186,11 +187,21 @@ def player_numbers(teamzzz)
           output.push(info[:number])
           end
         end
+=======
+def player_numbers(team)
+  output = nil
+  game_hash.each do |place, data|
+    data.each do |attributes, select_data|
+      binding.pry
+      if select_data == team
+        sel
+>>>>>>> 9c8f6ef19086c4811cbd10fefe39a8d8b6c9ccbb
       end
     end
   end
   output
 end 
+<<<<<<< HEAD
 
 def big_shoe_rebounds
   player = player_biggest_shoe_size
@@ -206,3 +217,21 @@ def players
   away_players = game_hash.fetch(:away).fetch(:players)
   home_players + away_players
 end
+=======
+def num_points_scored(name)
+  output = nil
+  game_hash.each do |place, data|
+    data.each do |attributes, select_data|
+      if attributes == :players
+        select_data.each do |info|
+          if info[:player_name] == name
+              output = info[:points]
+          end
+        end  
+      end
+    end
+  end
+  output
+end 
+      
+>>>>>>> 9c8f6ef19086c4811cbd10fefe39a8d8b6c9ccbb
